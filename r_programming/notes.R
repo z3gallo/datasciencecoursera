@@ -145,3 +145,48 @@ close(con)
 # Read lines of a text file
 con <- gzfile("words.gz") 
 x <- readLines(con, 10) 
+
+# Conditionals
+for (i in seq_along(x)) print(x[i]);
+
+count=10
+while (count < 10) {
+    print(count)
+    count = count + 1
+}
+
+repeat {
+    break
+}
+
+myFunc = function(x, y = 1.5, z = NULL) {
+    return x
+}
+
+# Variable args. (...) matches any number of arguments and can come first in the arg list. Args
+# after ... must be named.
+
+myPlot = function(x, y, ...) {
+    plot(x, y, ...)
+}
+
+
+add2 <- function(x, y) {
+    x + y
+}
+
+# Return items >n
+
+above <- function(x, n=10) {
+    use = x > n
+    x[use]
+}
+
+column.mean <- function(y) {
+    nc <- ncol(y)
+    means <- numeric(nc)
+    for (i in 1:nc) {
+        means[i] <- mean(y[,i])
+    }
+    means
+}
